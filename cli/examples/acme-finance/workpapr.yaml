@@ -1,0 +1,79 @@
+# workpapr.yaml — AI Audit Configuration
+# Docs: https://workpapr.ai/docs/config
+
+project:
+  name: my-project
+  description: ""
+
+# AI/LLM providers to evaluate against
+providers:
+  - id: anthropic
+    # config:
+    #   apiKey: ${ANTHROPIC_API_KEY}
+    #   model: claude-sonnet-4-20250514
+
+  - id: openai
+    # config:
+    #   apiKey: ${OPENAI_API_KEY}
+    #   model: gpt-4o
+
+# Scan settings — discover AI usage in your codebase
+scan:
+  # Directories to scan (relative to project root)
+  include:
+    - "src"
+    - "lib"
+    - "app"
+    - "server"
+    - "api"
+  # Directories to skip
+  exclude:
+    - "node_modules"
+    - "dist"
+    - "build"
+    - ".git"
+    - "vendor"
+    - "__pycache__"
+    - ".venv"
+  # File extensions to scan
+  extensions:
+    - ".ts"
+    - ".tsx"
+    - ".js"
+    - ".jsx"
+    - ".py"
+    - ".go"
+    - ".java"
+    - ".rs"
+    - ".rb"
+
+# Evaluation settings
+eval:
+  # Maximum concurrent evaluations
+  maxConcurrency: 4
+  # Cache evaluation results to reduce token costs
+  cache: true
+  # Output directory for reports
+  outputDir: ".workpapr/reports"
+
+# Compliance assertions to run during evaluations
+assertions:
+  - type: pii-detection
+    enabled: true
+    severity: high
+
+  - type: financial-accuracy
+    enabled: true
+    severity: critical
+
+  - type: authorization-boundary
+    enabled: true
+    severity: high
+
+  - type: hallucination-detection
+    enabled: true
+    severity: high
+
+  - type: bias-fairness
+    enabled: true
+    severity: medium

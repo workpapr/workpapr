@@ -1,16 +1,18 @@
-## Hi there 👋
+# workpapr
 
-<!--
-**workpapr/workpapr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+The provider-neutral AI audit platform. We don't use AI to audit — we make AI auditable.
 
-Here are some ideas to get you started:
+## Packages
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+| Package | Description |
+|---------|-------------|
+| [`cli/`](./cli) | Workpapr CLI — scan, review, and report on AI/LLM usage in your codebase |
+
+## Links
+
+- [Website](https://workpapr.ai)
+- [Documentation](https://workpapr.ai/docs)
+
+## License
+
+MIT
